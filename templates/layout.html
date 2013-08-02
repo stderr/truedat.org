@@ -8,9 +8,9 @@
     <link rel='stylesheet' type='text/css' href="">
   </head>
   <body>
+  <!-- JavaScript plugins (requires jQuery) -->
+  <script src="http://code.jquery.com/jquery.js"></script>
     {% block body %}{% endblock %}
-    <!-- JavaScript plugins (requires jQuery) -->
-    <script src="http://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
   </body>
