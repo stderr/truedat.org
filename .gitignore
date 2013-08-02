@@ -1,0 +1,5 @@
+# compiled py / object files
+*.py[cod]
+
+# virtualenv
+env/
