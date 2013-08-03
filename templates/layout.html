@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet" media="screen">
-    <link rel='stylesheet' type='text/css' href="">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   </head>
   <body>
-  <!-- JavaScript plugins (requires jQuery) -->
-  <script src="http://code.jquery.com/jquery.js"></script>
+
+  <div class='container'>
+    <div class='navbar'>
+      <a class='navbar-brand'>truedat.org</a> 
+      <a href='http://github.com/stderr/truedat.org' class='navbar-link pull-right'><small>truedat.org on github</small></a>
+    </div>
+
     {% block body %}{% endblock %}
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  </div>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="{{ url_for('static', filename='truedat.js') }}"></script>
     <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+
   </body>
 </html>

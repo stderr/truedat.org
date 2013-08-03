@@ -3,3 +3,6 @@
 
 # virtualenv
 env/
+
+# sensitive config files
+config/*.cfg
