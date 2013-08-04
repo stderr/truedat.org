@@ -17,6 +17,4 @@ def latest():
   github_activity = github.pull('stderr')
 
   merged = tweets + github_activity
-  sorted(merged, key=lambda activity: activity.date)
-  
-  return merged[:7]
+  return sorted(merged, key=lambda activity: activity.date, reverse=True)[:7]
