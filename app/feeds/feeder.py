@@ -15,7 +15,7 @@ def latest(limit=7):
                   'consumer_key': config.get('twitter', 'consumer_key'),
                   'access_secret': config.get('twitter', 'access_secret')})
 
-  tweets = tweeter.pull(config.get('twitter', 'shortname'))[:5]
+  tweets = tweeter.pull(config.get('twitter', 'shortname'))[0:limit]
 
   github = GitHub()
   github_events = github.pull('stderr')

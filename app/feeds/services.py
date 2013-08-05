@@ -57,7 +57,7 @@ class GitHub(Service):
   def pull(self, user):
     request_url = self.activity_url % user
     events = json.loads(urllib2.urlopen(request_url).read())
-    actionable = [event for event in events if event['type'] in self.acceptable]
+    actionable = [event for event in events if event['type'] in self.acceptable.keys()]
 
     for activity in actionable:
       date = to_mst(self._parse_service_timestamp(activity['created_at']))
