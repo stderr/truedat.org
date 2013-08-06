@@ -56,7 +56,10 @@ class GitHub(Service):
 
   def pull(self, user):
     request_url = self.activity_url % user
-    events = json.loads(urllib2.urlopen(request_url).read())
+    try:
+      events = json.loads(urllib2.urlopen(request_url).read())
+    except urllib2.HTTPError:
+      return []
     actionable = [event for event in events if event['type'] in self.acceptable.keys()]
 
     for activity in actionable:

@@ -45,6 +45,7 @@
   <div id='opinion' class='row' style='display:none;'> <!-- Christ almighty.  When using Bootstrap's 'hide' class, it applies !important to display:none, which jQuery's hide/show and toggle methods have a severe problem with.  Lesson learned.-->
     <div class='col-lg-12'>
       <pre>
+      <button type="button" class="close" aria-hidden="true">&times;</button>
         qbs = NFL::Quarterbacks.find(:all)
 
         qbs.sort_by { |qb1, qb2| qb1.skill <=> qb2.skill }
