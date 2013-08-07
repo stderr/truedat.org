@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 from dateutil import tz
 
+from flask import Markup
 import twitter
 
 # I forgot how bad Python's date/time handling is.
@@ -64,8 +65,11 @@ class GitHub(Service):
 
     for activity in actionable:
       date = to_mst(self._parse_service_timestamp(activity['created_at']))
-      message = ", ".join([commit["message"] for commit in activity["payload"]["commits"]])
-      url = activity["repo"]["url"]
+      print activity
+      message = "".join(["<li class='commit'>%(message)s</li>" % {"message": commit["message"]} for commit in activity["payload"]["commits"]])
+      message = Markup("<ul class='commits'>%(raw)s</ul>" % {'raw':message})
+
+      url = "http://github.com/%(name)s" % {"name": activity["repo"]["name"]}
 
       title = self.acceptable[activity['type']] % {"commit_count": activity['payload']['size'], 
                                                    "pluralize": "s" if activity['payload']['size'] > 1 else "", 

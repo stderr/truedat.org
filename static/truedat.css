@@ -18,3 +18,11 @@ h1, h2, h3, h4, h5, h6, .navbar-link, .navbar-brand {
   line-height: 1.25;
 }
 
+ul.commits {
+  list-style-type: square;
+}
+
+ul.commits li.commit {
+  color: #555 !important;
+  font-family: 'Share Tech Mono', sans-serif !important;
+}
