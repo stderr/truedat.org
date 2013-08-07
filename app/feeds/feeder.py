@@ -2,7 +2,7 @@ import ConfigParser # I hate littering my environment with variables for configu
 from services import Twitter, GitHub
 
 
-def latest(limit=7):
+def latest(limit=5):
   """
     Controller interface to feed services. Definitely needs a makeover.
   """
