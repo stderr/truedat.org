@@ -1,0 +1,10 @@
+h1, h2, h3, h4, h5, h6, .navbar-link, .navbar-brand {
+  font-family: "Monda", sans-serif !important;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.navbar-link, .list-group-item-heading, .navbar-brand {
+  color: #428bca !important;
+}
+
