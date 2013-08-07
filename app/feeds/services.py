@@ -37,7 +37,7 @@ class Service(object):
 
   def __init__(self):
     self.activities = []
-    self.date_format = "on %a %B %d, at %I:%M%p" 
+    self.date_format = "on %a %B %-d, at %-I:%M %p" 
 
   def _parse_service_timestamp(self, time):
     return datetime.strptime(time, self.service_time_format)
